@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<link rel="icon" href="icon.png">
+<style>
+button{
+ background-color: black;
+ color: white;
+ height: 40px;
+ width: 80px;
+ border-radius: 5px;
+}
+table, th{
+ border: 1px solid black;
+}
+input{
+ width: 330px;
+ height: 40px;
+ font-size: 30px;
+}
+</style>
+</head>
+<body>
+<center>
+<h1>Simple Calculator</h1>
+<table>
+<tr>
+<th><input id="op" onkeydown="key(event)" /></th>
+</tr>
+</table>
+<table>
+<tr>
+<th><button onclick="dis(1)">1</button></th>
+<th><button onclick="dis(2)">2</button></th>
+<th><button onclick="dis(3)">3</button></th>
+<th><button onclick="dis('+')">+</button></th>
+</tr>
+<tr>
+<th><button onclick="dis(4)">4</button></th>
+<th><button onclick="dis(5)">5</button></th>
+<th><button onclick="dis(6)">6</button></th>
+<th><button onclick="dis('-')">-</button></th>
+</tr>
+<tr>
+<th><button onclick="dis(7)">7</button></th>
+<th><button onclick="dis(8)">8</button></th>
+<th><button onclick="dis(9)">9</button></th>
+<th><button onclick="dis('*')">*</button></th>
+</tr>
+<tr>
+<th><button onclick="dis('.')">.</button></th>
+<th><button onclick="dis(0)">0</button></th>
+<th><button onclick="solve()">=</button></th>
+<th><button onclick="dis('/')">/</button></th>
+</tr>
+</table>
+</center>
+<script>
+function dis(ob) {
+ document.getElementById("op").value+= ob;
+}
+function solve() {
+ document.getElementById("op").value= eval(document.getElementById("op").value);
+}
+function key(k) {
+ if (k.key == "Enter") {
+  solve();
+ }
+}
+</script>
+</body>
+</html>
